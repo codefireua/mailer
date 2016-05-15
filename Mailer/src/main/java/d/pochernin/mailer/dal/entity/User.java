@@ -8,6 +8,7 @@ package d.pochernin.mailer.dal.entity;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -58,13 +59,13 @@ public class User implements Serializable {
     @Column(name = "user_name")
     private String userName;
     @OneToMany(mappedBy = "templateOwner")
-    private Collection<EmlUsersTemplate> emlUsersTemplateCollection;
+    private Set<EmlUsersTemplate> emlUsersTemplateCollection;
     @OneToMany(mappedBy = "deliveryOwner")
-    private Collection<Delivery> deliveryCollection;
+    private Set<Delivery> deliveryCollection;
     @OneToMany(mappedBy = "groupOwner")
-    private Collection<ContactsGroup> contactsGroupCollection;
+    private Set<ContactsGroup> contactsGroupCollection;
     @OneToMany(mappedBy = "userId")
-    private Collection<Contact> contactListCollection;
+    private Set<Contact> contactListCollection;
 
     public User() {
     }
@@ -108,38 +109,38 @@ public class User implements Serializable {
     }
 
     @XmlTransient
-    public Collection<EmlUsersTemplate> getEmlUsersTemplateCollection() {
+    public Set<EmlUsersTemplate> getEmlUsersTemplateCollection() {
         return emlUsersTemplateCollection;
     }
 
-    public void setEmlUsersTemplateCollection(Collection<EmlUsersTemplate> emlUsersTemplateCollection) {
+    public void setEmlUsersTemplateCollection(Set<EmlUsersTemplate> emlUsersTemplateCollection) {
         this.emlUsersTemplateCollection = emlUsersTemplateCollection;
     }
 
     @XmlTransient
-    public Collection<Delivery> getDeliveryCollection() {
+    public Set<Delivery> getDeliveryCollection() {
         return deliveryCollection;
     }
 
-    public void setDeliveryCollection(Collection<Delivery> deliveryCollection) {
+    public void setDeliveryCollection(Set<Delivery> deliveryCollection) {
         this.deliveryCollection = deliveryCollection;
     }
 
     @XmlTransient
-    public Collection<ContactsGroup> getContactsGroupCollection() {
+    public Set<ContactsGroup> getContactsGroupCollection() {
         return contactsGroupCollection;
     }
 
-    public void setContactsGroupCollection(Collection<ContactsGroup> contactsGroupCollection) {
+    public void setContactsGroupCollection(Set<ContactsGroup> contactsGroupCollection) {
         this.contactsGroupCollection = contactsGroupCollection;
     }
 
     @XmlTransient
-    public Collection<Contact> getContactListCollection() {
+    public Set<Contact> getContactListCollection() {
         return contactListCollection;
     }
 
-    public void setContactListCollection(Collection<Contact> contactListCollection) {
+    public void setContactListCollection(Set<Contact> contactListCollection) {
         this.contactListCollection = contactListCollection;
     }
 

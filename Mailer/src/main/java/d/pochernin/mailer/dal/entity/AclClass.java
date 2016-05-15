@@ -6,8 +6,9 @@
 package d.pochernin.mailer.dal.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -49,7 +50,7 @@ public class AclClass implements Serializable {
     @Column(name = "class")
     private String class1;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "objectIdClass")
-    private Collection<AclObjectIdentity> aclObjectIdentityCollection;
+    private Set<AclObjectIdentity> aclObjectIdentityCollection;
 
     public AclClass() {
     }
@@ -81,11 +82,11 @@ public class AclClass implements Serializable {
     }
 
     @XmlTransient
-    public Collection<AclObjectIdentity> getAclObjectIdentityCollection() {
+    public Set<AclObjectIdentity> getAclObjectIdentityCollection() {
         return aclObjectIdentityCollection;
     }
 
-    public void setAclObjectIdentityCollection(Collection<AclObjectIdentity> aclObjectIdentityCollection) {
+    public void setAclObjectIdentityCollection(Set<AclObjectIdentity> aclObjectIdentityCollection) {
         this.aclObjectIdentityCollection = aclObjectIdentityCollection;
     }
 

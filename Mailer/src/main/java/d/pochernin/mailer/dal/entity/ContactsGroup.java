@@ -8,6 +8,7 @@ package d.pochernin.mailer.dal.entity;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,7 +51,7 @@ public class ContactsGroup implements Serializable {
     @ManyToOne
     private User groupOwner;
     @OneToMany(mappedBy = "contactGroup")
-    private Collection<Contact> contactListCollection;
+    private Set<Contact> contactListCollection;
 
     public ContactsGroup() {
     }
@@ -85,11 +86,11 @@ public class ContactsGroup implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Contact> getContactListCollection() {
+    public Set<Contact> getContactListCollection() {
         return contactListCollection;
     }
 
-    public void setContactListCollection(Collection<Contact> contactListCollection) {
+    public void setContactListCollection(Set<Contact> contactListCollection) {
         this.contactListCollection = contactListCollection;
     }
 

@@ -6,8 +6,8 @@
 package d.pochernin.mailer.dal.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -56,7 +56,7 @@ public class Contact implements Serializable {
     @Column(name = "contact_phone")
     private String contactPhone;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "contactId")
-    private Collection<DeliveryContactList> deliveryContactListCollection;
+    private Set<DeliveryContactList> deliveryContactListCollection;
     @JoinColumn(name = "contact_group", referencedColumnName = "group_id")
     @ManyToOne
     private ContactsGroup contactGroup;
@@ -67,11 +67,10 @@ public class Contact implements Serializable {
     public Contact() {
     }
 
-    public Contact(String contactName, String contactEmail, String contactPhone, Collection<DeliveryContactList> deliveryContactListCollection, ContactsGroup contactGroup, User userId) {
+    public Contact(String contactName, String contactEmail, String contactPhone, ContactsGroup contactGroup, User userId) {
         this.contactName = contactName;
         this.contactEmail = contactEmail;
         this.contactPhone = contactPhone;
-        this.deliveryContactListCollection = deliveryContactListCollection;
         this.contactGroup = contactGroup;
         this.userId = userId;
     }
@@ -109,11 +108,11 @@ public class Contact implements Serializable {
     }
 
     @XmlTransient
-    public Collection<DeliveryContactList> getDeliveryContactListCollection() {
+    public Set<DeliveryContactList> getDeliveryContactListCollection() {
         return deliveryContactListCollection;
     }
 
-    public void setDeliveryContactListCollection(Collection<DeliveryContactList> deliveryContactListCollection) {
+    public void setDeliveryContactListCollection(Set<DeliveryContactList> deliveryContactListCollection) {
         this.deliveryContactListCollection = deliveryContactListCollection;
     }
 

@@ -8,6 +8,7 @@ package d.pochernin.mailer.dal.entity;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -54,9 +55,9 @@ public class AclSid implements Serializable {
     @Column(name = "sid")
     private String sid;
     @OneToMany(mappedBy = "ownerSid")
-    private Collection<AclObjectIdentity> aclObjectIdentityCollection;
+    private Set<AclObjectIdentity> aclObjectIdentityCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sid")
-    private Collection<AclEntry> aclEntryCollection;
+    private Set<AclEntry> aclEntryCollection;
 
     public AclSid() {
     }
@@ -93,20 +94,20 @@ public class AclSid implements Serializable {
     }
 
     @XmlTransient
-    public Collection<AclObjectIdentity> getAclObjectIdentityCollection() {
+    public Set<AclObjectIdentity> getAclObjectIdentityCollection() {
         return aclObjectIdentityCollection;
     }
 
-    public void setAclObjectIdentityCollection(Collection<AclObjectIdentity> aclObjectIdentityCollection) {
+    public void setAclObjectIdentityCollection(Set<AclObjectIdentity> aclObjectIdentityCollection) {
         this.aclObjectIdentityCollection = aclObjectIdentityCollection;
     }
 
     @XmlTransient
-    public Collection<AclEntry> getAclEntryCollection() {
+    public Set<AclEntry> getAclEntryCollection() {
         return aclEntryCollection;
     }
 
-    public void setAclEntryCollection(Collection<AclEntry> aclEntryCollection) {
+    public void setAclEntryCollection(Set<AclEntry> aclEntryCollection) {
         this.aclEntryCollection = aclEntryCollection;
     }
 

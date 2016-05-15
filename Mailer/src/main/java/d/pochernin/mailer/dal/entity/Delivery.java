@@ -6,9 +6,8 @@
 package d.pochernin.mailer.dal.entity;
 
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -71,9 +70,9 @@ public class Delivery implements Serializable {
     @ManyToOne
     private User deliveryOwner;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "deliveryId")
-    private Collection<DeliveryContactList> deliveryContactListCollection;
+    private Set<DeliveryContactList> deliveryContactListCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "delivery")
-    private Collection<DeliveryType> deliveryTypeCollection;
+    private Set<DeliveryType> deliveryTypeCollection;
 
     public Delivery() {
     }
@@ -146,20 +145,20 @@ public class Delivery implements Serializable {
     }
 
     @XmlTransient
-    public Collection<DeliveryContactList> getDeliveryContactListCollection() {
+    public Set<DeliveryContactList> getDeliveryContactListCollection() {
         return deliveryContactListCollection;
     }
 
-    public void setDeliveryContactListCollection(Collection<DeliveryContactList> deliveryContactListCollection) {
+    public void setDeliveryContactListCollection(Set<DeliveryContactList> deliveryContactListCollection) {
         this.deliveryContactListCollection = deliveryContactListCollection;
     }
 
     @XmlTransient
-    public Collection<DeliveryType> getDeliveryTypeCollection() {
+    public Set<DeliveryType> getDeliveryTypeCollection() {
         return deliveryTypeCollection;
     }
 
-    public void setDeliveryTypeCollection(Collection<DeliveryType> deliveryTypeCollection) {
+    public void setDeliveryTypeCollection(Set<DeliveryType> deliveryTypeCollection) {
         this.deliveryTypeCollection = deliveryTypeCollection;
     }
 
