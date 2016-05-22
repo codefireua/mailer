@@ -12,24 +12,20 @@ import org.springframework.stereotype.Repository;
 import ua.com.codefire.mailer.entity.ContactList;
 import ua.com.codefire.mailer.entity.Users;
 
-/**
- *
- * @author HP-Davydoff
- */
+
 @Repository("entity")
-public class UsersController implements IUsersDAO{
+public class ContactListController implements IUsersDAO {
 
     @PersistenceContext(unitName = "AutowiredMailer")
     private EntityManager entityManager;
     
     @Override
-    public List<Users> GetUsers() {
-        return entityManager.createNamedQuery("Users.findAll", Users.class).getResultList();
+    public List<ContactList> GetContactList() {
+        return entityManager.createNamedQuery("ContactList.findAll", ContactList.class).getResultList();
     }
 
     @Override
-    public List<ContactList> GetContactList() {
+    public List<Users> GetUsers() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

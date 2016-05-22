@@ -7,14 +7,16 @@ package ua.com.codefire.mailer.IDAO;
 
 import java.io.Serializable;
 import java.util.List;
+import ua.com.codefire.mailer.entity.ContactList;
 import ua.com.codefire.mailer.entity.Users;
 
 /**
  *
  * @author HP-Davydoff
  */
-public interface IDAO extends Serializable{
+public interface IUsersDAO extends Serializable{
     
     public List<Users> GetUsers();
+    public List<ContactList> GetContactList();
     
 }
