@@ -26,10 +26,5 @@ public class UsersController implements IUsersDAO{
     public List<Users> GetUsers() {
         return entityManager.createNamedQuery("Users.findAll", Users.class).getResultList();
     }
-
-    @Override
-    public List<ContactList> GetContactList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

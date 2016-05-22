@@ -5,10 +5,14 @@
  */
 package ua.com.codefire.mailer.IDAO;
 
+import java.io.Serializable;
+import java.util.List;
+import ua.com.codefire.mailer.entity.ContactList;
+
 /**
  *
  * @author HP-Davydoff
  */
-public interface IContactListDAO {
-    
+public interface IContactListDAO extends Serializable{
+    public List<ContactList> GetContactList();
 }

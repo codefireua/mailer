@@ -10,11 +10,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import ua.com.codefire.mailer.entity.ContactList;
-import ua.com.codefire.mailer.entity.Users;
 
 
 @Repository("entity")
-public class ContactListController implements IUsersDAO {
+public class ContactListController implements IContactListDAO {
 
     @PersistenceContext(unitName = "AutowiredMailer")
     private EntityManager entityManager;
@@ -24,8 +23,4 @@ public class ContactListController implements IUsersDAO {
         return entityManager.createNamedQuery("ContactList.findAll", ContactList.class).getResultList();
     }
 
-    @Override
-    public List<Users> GetUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
