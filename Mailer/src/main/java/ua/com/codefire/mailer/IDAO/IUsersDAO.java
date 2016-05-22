@@ -17,6 +17,5 @@ import ua.com.codefire.mailer.entity.Users;
 public interface IUsersDAO extends Serializable{
     
     public List<Users> GetUsers();
-    
-    
+       
 }
