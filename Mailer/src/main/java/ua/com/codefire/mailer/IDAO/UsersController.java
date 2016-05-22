@@ -6,8 +6,8 @@
 package ua.com.codefire.mailer.IDAO;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.codefire.mailer.entity.Users;
 
@@ -15,15 +15,15 @@ import ua.com.codefire.mailer.entity.Users;
  *
  * @author HP-Davydoff
  */
-@Repository("entity")
+@Repository("template")
 public class UsersController implements IUsersDAO{
 
-    @PersistenceContext(unitName = "AutowiredMailer")
-    private EntityManager entityManager;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
     
     @Override
     public List<Users> GetUsers() {
-        return entityManager.createNamedQuery("Users.findAll", Users.class).getResultList();
+        return jdbcTemplate.queryForList("Users.findAll", Users.class);
     }
     
 }

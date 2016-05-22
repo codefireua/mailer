@@ -6,21 +6,21 @@
 package ua.com.codefire.mailer.IDAO;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ua.com.codefire.mailer.entity.ContactList;
 
 
-@Repository("entity")
+@Repository("template")
 public class ContactListController implements IContactListDAO {
 
-    @PersistenceContext(unitName = "AutowiredMailer")
-    private EntityManager entityManager;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
     
     @Override
     public List<ContactList> GetContactList() {
-        return entityManager.createNamedQuery("ContactList.findAll", ContactList.class).getResultList();
+        return jdbcTemplate.queryForList("ContactList.findAll", ContactList.class);
     }
 
 }

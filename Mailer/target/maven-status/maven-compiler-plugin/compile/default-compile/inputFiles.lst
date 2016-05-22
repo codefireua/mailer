@@ -6,10 +6,10 @@ C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\EmlBlank.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\IDAO\IContactListDAO.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\Delivery.java
+C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\util\UsersRowMapper.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\EmlUsersTemplate.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\EmlBodyBlank.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\IDAO\ContactListController.java
-C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\util\UsersRowMapper.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\DeliveryType.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\EmlHeaderBlank.java
 C:\Users\HP-Davydoff\projects\mailer\Mailer\src\main\java\ua\com\codefire\mailer\entity\DeliveryContactList.java
